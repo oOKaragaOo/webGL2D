@@ -17,10 +17,11 @@ const vertexData = [
     -0.3, 0.5, 0, //V1 Y position
      0.3, 0.5, 0, //V2 position
      0.3,   0, 0, //V3 position
+    
     ];
 const colorData = [
     1, 0, 0, //V1 Color
-    0, 1, 0, //V2 Color
+    0, 0, 0, //V2 Color
     1, 0, 0, //V3 Color
 
     0, 1, 0, //V1 Color
@@ -78,4 +79,4 @@ const colorLocation = gl.getAttribLocation(program, `color`);
     gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
     gl.vertexAttribPointer(colorLocation, 3, gl.FLOAT, false, 0, 0);
     gl.useProgram(program);
-    gl.drawArrays(gl.TRIANGLES, 0, 9);
+    gl.drawArrays(gl.TRIANGLES, 0, vertexData.length/3);
